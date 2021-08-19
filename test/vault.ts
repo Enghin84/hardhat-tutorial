@@ -1,19 +1,21 @@
 import {deployContract} from './helpers/helpers';
 import {ERC20Mock, Vault} from "../typechain";
+import {ethers as eth} from 'ethers';
 import {ethers} from 'hardhat';
 import {SignerWithAddress} from "@nomiclabs/hardhat-ethers/signers";
 import {expect} from "chai";
 
-describe('vault', () => {
+describe('Vault', () => {
     let snapshotId: any;
     let token: ERC20Mock;
     let vault: Vault;
     let owner: SignerWithAddress;
+    let user: SignerWithAddress;
 
     before(async () => {
         token = (await deployContract('ERC20Mock')) as ERC20Mock;
         vault = (await deployContract('Vault', [token.address])) as Vault;
-        [owner] = await ethers.getSigners();
+        [owner, user] = await ethers.getSigners();
     });
 
     beforeEach(async () => {
@@ -24,8 +26,41 @@ describe('vault', () => {
         await ethers.provider.send('evm_revert', [snapshotId]);
     });
 
-    it('Should deploy', async () => {
-        expect(await vault.owner()).to.equal(owner.address);
-        expect(await vault.token()).to.equal(token.address);
+    describe('Deploy', () => {
+        it('Should fail if zero token address', async () => {
+            await expect(deployContract('Vault', [eth.constants.AddressZero])).to.be.revertedWith('token is zero address');
+        });
+
+        it('Should deploy', async () => {
+            expect(await vault.owner()).to.equal(owner.address);
+            expect(await vault.token()).to.equal(token.address);
+        });
     });
+
+    describe('Deposit', () => {
+        it('Should fail if amount 0', async () => {
+            await expect(vault.deposit(0)).to.be.revertedWith('invalid amount deposited');
+        });
+
+        it('Should fail with insufficient balance', async () => {
+            await expect(vault.connect(user).deposit(100)).to.be.revertedWith('ERC20: transfer amount exceeds balance');
+        });
+
+        it('Should fail with insufficient allowance', async () => {
+            await token.mint(user.address, 10000);
+            await expect(vault.connect(user).deposit(100)).to.be.revertedWith('ERC20: transfer amount exceeds allowance');
+        });
+
+        it('Should run successfully', async () => {
+            await token.mint(user.address, 10000);
+            await token.connect(user).approve(vault.address, 100);
+            await expect(vault.connect(user).deposit(100))
+                .to
+                .emit(vault, 'DepositEvent')
+                .withArgs(user.address, 100);
+
+            await expect(await vault.totalAmountDeposited()).to.equal(100);
+            await expect(await vault.balances(user.address)).to.equal(100);
+        });
+    })
 });

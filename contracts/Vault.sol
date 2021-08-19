@@ -9,7 +9,7 @@ contract Vault is Ownable {
 
     IERC20 public immutable token;
     mapping(address => uint256) public balances;
-    uint256 totalAmountDeposited = 0;
+    uint256 public totalAmountDeposited = 0;
     bool public active;
 
     constructor(address _token) {
@@ -21,12 +21,11 @@ contract Vault is Ownable {
         require(amount > 0, "invalid amount deposited");
 
         // transfer ERC20 amount from sender to Vault
-        bool isSucceeded = token.transferFrom(
+        token.transferFrom(
             msg.sender,
             address(this),
             amount
         );
-        require(isSucceeded, "erc20 transfer failed...");
 
         // update totalAmountDeposited
         totalAmountDeposited = totalAmountDeposited + amount;
