@@ -3,7 +3,6 @@ import '@nomiclabs/hardhat-waffle';
 import * as config from './config';
 import 'hardhat-typechain';
 import '@nomiclabs/hardhat-etherscan';
-import 'solidity-coverage';
 
 const cfg: HardhatUserConfig = {
     defaultNetwork: 'hardhat',

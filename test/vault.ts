@@ -62,5 +62,34 @@ describe('Vault', () => {
             await expect(await vault.totalAmountDeposited()).to.equal(100);
             await expect(await vault.balances(user.address)).to.equal(100);
         });
-    })
+    });
+
+    describe('Withdraw', () => {
+        it('Should fail if amount 0', async () => {
+            await expect(vault.withdraw(0)).to.be.revertedWith('invalid amount to withdraw');
+        });
+
+        it('Should fail with insufficient allowance', async () => {
+            await expect(vault.connect(user).withdraw(100)).to.be.revertedWith('not enough money in the vault for this user');
+        });
+
+        it('Should fail with insufficient founds', async () => {
+            await token.mint(user.address, 10000);
+            await expect(vault.connect(user).withdraw(100)).to.be.revertedWith('not enough money in the vault');
+        });
+
+        it('Should run successfully', async () => {
+            await token.mint(user.address, 10000);
+            await token.connect(user).approve(vault.address, 100);
+            await vault.connect(user).deposit(100);
+
+            await expect(await vault.withdraw(20))
+                .to
+                .emit(vault, 'WithdrawEvent')
+                .withArgs(user.address, 20);
+
+            await expect(await vault.totalAmountDeposited()).to.equal(80);
+            await expect(await vault.balances(user.address)).to.equal(80);
+        });
+    });
 });
