@@ -7,7 +7,7 @@ import '@nomiclabs/hardhat-etherscan';
 const cfg: HardhatUserConfig = {
     defaultNetwork: 'hardhat',
     networks: config.networks,
-
+    etherscan: config.etherscan,
     solidity: {
         version: '0.8.4',
         settings: {
