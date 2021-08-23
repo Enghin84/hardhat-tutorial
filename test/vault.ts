@@ -11,11 +11,12 @@ describe('Vault', () => {
     let vault: Vault;
     let owner: SignerWithAddress;
     let user: SignerWithAddress;
+    let unknownUser: SignerWithAddress;
 
     before(async () => {
         token = (await deployContract('ERC20Mock')) as ERC20Mock;
         vault = (await deployContract('Vault', [token.address])) as Vault;
-        [owner, user] = await ethers.getSigners();
+        [owner, user, unknownUser] = await ethers.getSigners();
     });
 
     beforeEach(async () => {
@@ -83,7 +84,7 @@ describe('Vault', () => {
             await token.connect(user).approve(vault.address, 100);
             await vault.connect(user).deposit(100);
 
-            await expect(await vault.withdraw(20))
+            await expect(await vault.connect(user).withdraw(20))
                 .to
                 .emit(vault, 'WithdrawEvent')
                 .withArgs(user.address, 20);
@@ -92,4 +93,16 @@ describe('Vault', () => {
             await expect(await vault.balances(user.address)).to.equal(80);
         });
     });
+
+    describe('SetActive', () => {
+        it('Should it fail if called user other than owner', async () => {
+            await expect(vault.connect(unknownUser).setActive(false)).to.be.revertedWith('Ownable: caller is not the owner');
+        });
+
+        it('Runs successfully', async () => {
+            await expect(await vault.active()).to.equal(true);
+            await vault.connect(owner).setActive(false);
+            await expect(await vault.active()).to.equal(false);
+        });
+    })
 });

@@ -15,6 +15,7 @@ contract Vault is Ownable {
     constructor(address _token) {
         require(_token != address(0), "token is zero address");
         token = IERC20(_token);
+        active = true;
     }
 
     function deposit(uint256 amount) external {
@@ -46,7 +47,7 @@ contract Vault is Ownable {
         require(totalAmountDeposited > amount, "not enough money in the vault");
 
         require(
-            token.transferFrom(address(this), msg.sender, amount),
+            token.transfer(msg.sender, amount),
             "token transaction failed"
         );
 
