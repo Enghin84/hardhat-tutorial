@@ -52,6 +52,11 @@ describe('Vault', () => {
             await expect(vault.connect(user).deposit(100)).to.be.revertedWith('ERC20: transfer amount exceeds allowance');
         });
 
+        it('Should fail if vault not active', async () => {
+            await vault.setActive(false);
+            await expect(vault.deposit(11)).to.be.revertedWith('vault is not active');
+        });
+
         it('Should run successfully', async () => {
             await token.mint(user.address, 10000);
             await token.connect(user).approve(vault.address, 100);
@@ -77,6 +82,11 @@ describe('Vault', () => {
         it('Should fail with insufficient founds', async () => {
             await token.mint(user.address, 10000);
             await expect(vault.connect(user).withdraw(100)).to.be.revertedWith('not enough money in the vault');
+        });
+
+        it('Should fail if vault not active', async () => {
+            await vault.setActive(false);
+            await expect(vault.withdraw(11)).to.be.revertedWith('vault is not active');
         });
 
         it('Should run successfully', async () => {

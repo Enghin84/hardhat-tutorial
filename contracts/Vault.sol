@@ -18,7 +18,12 @@ contract Vault is Ownable {
         active = true;
     }
 
-    function deposit(uint256 amount) external {
+    modifier onlyActive() {
+        require(active, 'vault is not active');
+        _;
+    }
+
+    function deposit(uint256 amount) external onlyActive {
         require(amount > 0, "invalid amount deposited");
 
         // transfer ERC20 amount from sender to Vault
@@ -38,7 +43,7 @@ contract Vault is Ownable {
         emit DepositEvent(msg.sender, amount);
     }
 
-    function withdraw(uint256 amount) external {
+    function withdraw(uint256 amount) external onlyActive {
         require(amount > 0, "invalid amount to withdraw");
         require(
             balances[msg.sender] >= amount,
