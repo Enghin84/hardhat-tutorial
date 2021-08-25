@@ -78,6 +78,6 @@ this is the token that we deployed the contract with, `0x01f7feeb77ae5e04d9606c2
 #### 3. Go to `Write Contract` and connect your wallet
 #### 4. Press `Approve`
         4.1. Spender (address) -> your contract address
-        4.2. Amount (uint256) -> The max value you let the contract to spend from your assets
+        4.2. Amount (uint256) -> The max value you let the contract to spend from your assets, insert the value and then add the digits( hit the +) and select 10^18
 ### Step 2 Deposit 
 Now for deposit, go to your contract on Rinkeby testnet -> `Write Contract` -> connect wallet -> deposit -> insert the value and then add the digits( hit the +) and select 10^18
