@@ -9,13 +9,13 @@
 
 --download link: https://nodejs.org/en/download/
 
-##### Create a new folder for the project
+### Create a new folder for the project
 
- Clone the git repository
+##### Clone the git repository
     1. In the newly created folder you have to open a terminal here, to do that you have to right click and select the `Git bash here` option
     2. 
 
- Install dependencies
+##### Install dependencies
 
 ### Configure your config.ts
 1. Add Rinkeby Infura Key
