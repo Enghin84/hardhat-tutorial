@@ -12,7 +12,6 @@
 ### Create a new folder for the project
 
 ##### Generate SSH key
-
 To generate SSH key you have to open a git bash terminal, to do that you have to right click on desktop and select `Git bash here`
     1. Insert this command in the terminal `ssh-keygen -t ed25519 -C "your_email@example.com"` and replace with your email, but it has to be the one connected with your GitHub account (if you don't have a GitHub account, go and make one here https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home)
     2. skip the next steps by pressing enter, this way it will go with the default options
