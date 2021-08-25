@@ -22,9 +22,11 @@
 ##### Clone the git repository
     1. Create a new folder for this project
     2. In the newly created folder you have to open a terminal here
-    3. paste this command: git clone git@github.com:Enghin84/hardhat-tutorial.git
+    3. paste this command: git clone git@github.com:Enghin84/hardhat-tutorial.git, this line of code will clone the repo on your local machine
+    4. type in terminal cd hardhat-tutorial to move the terminal in the cloned repo folder
 
 ##### Install dependencies
+    1. type `npm install` to install the depedencies
 
 ### Configure your config.ts
 1. Add Rinkeby Infura Key
