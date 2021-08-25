@@ -1,11 +1,11 @@
-### Clone the git repo;
+### Clone the git repo
 
-### Install dependencies;
+### Install dependencies
 
 ### Configure your config.ts
 1. Add Rinkeby Infura Key
 2. Add Wallet Private key
-3. Add Etherscan API key for verify;
+3. Add Etherscan API key for verify
 
 ### Type `npx hardhat` to see the commands
 1. First thing we need to `compile` to generate the typechain files
