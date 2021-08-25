@@ -71,12 +71,12 @@ Now it's time to interact with the smart contract that we have just deployed
 
 For allowance, go to the EQZ contract page https://rinkeby.etherscan.io/address/0x01F7FeEB77aE5e04d9606C209a7faFf2187Cd5c1 
 this is the token that we deployed the contract with, `0x01f7feeb77ae5e04d9606c209a7faff2187cd5c1`
-####n 1. Press `Contract` -> `Read Contract`
-##### 2. Press `Allowance`
+#### 1. Press `Contract` -> `Read Contract`
+#### 2. Press `Allowance`
         2.1. Owner (address) -> your wallet public address
         2.2. Spender (address) -> your contract address
-##### 3. Go to `Write Contract` and connect your wallet
-##### 4. Press `Approve`
+#### 3. Go to `Write Contract` and connect your wallet
+#### 4. Press `Approve`
         4.1. Spender (address) -> your contract address
         4.2. Amount (uint256) -> The max value you let the contract to spend from your assets
 ### Step 2 Deposit 
