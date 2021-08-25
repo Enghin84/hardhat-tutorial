@@ -12,7 +12,8 @@
 ### Create a new folder for the project
 
 ##### Clone the git repository
-    1. In the newly created folder you have to open a terminal here, to do that you have to right click and select the `Git bash here` option
+    1. In the newly created folder you have to open a terminal here, to do that you have to right click and
+    select the `Git bash here` option
     2. 
 
 ##### Install dependencies
