@@ -21,7 +21,7 @@ For allowance, go to the contract of the token that we deployed the contract wit
 ##### 2. Press `Allowance`
         2.1. Owner (address) -> your wallet public address
         2.2. Spender (address) -> your contract address
-    3. Go to `Write Contract` and connect your wallet
+##### 3. Go to `Write Contract` and connect your wallet
 ##### 4. Press `Approve`
         4.1. Spender (address) -> your contract address
         4.2. Amount (uint256) -> The max value you let the contract to spend from your assets
