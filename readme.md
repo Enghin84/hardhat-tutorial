@@ -49,13 +49,16 @@ In the repo we have config.sample.ts, this is a mock version, here you have to r
 
    Go to https://etherscan.io/ and make an account there to get the API key (here how https://imgur.com/a/SJV34ng)
 
-### Type `npx hardhat` to see the commands
-1. First thing we need to `compile` to generate the typechain files
-2. Then we run the `test` command to see if everything is alright
-3. After this we `run` this command `npx hardhat run --network rinkeby scripts/deploy.ts`
+Now that we are all set, it's time to run the commands to progress further. In the terminal insert the next commands
+
+### Deployment stage
+We will use Harhat to work with smart contracts. Type `npx hardhat` in the terminal to see the list of commands and what they do.
+##### 1. First thing we need to `compile` to generate the typechain files
+##### 2. Then we run the `test` command to see if everything is alright
+##### 3. After this we `run` this command `npx hardhat run --network rinkeby scripts/deploy.ts`. This command will deply the contract on the Rinkeby TestNet. When it will finish the deployment process(it might take a while), it will show here in the terminal the contract address, make sure you keep it safe, it will help us further, when we will intercat with the contract.
 
 ### Now we have deployed the contract, but we still need to verify it after with this command
-`npx hardhat verify --network rinkeby [contract address] [token address in our case is {0x01f7feeb77ae5e04d9606c209a7faff2187cd5c1}]`
+`npx hardhat verify --network rinkeby [contract address] [token address which in our case is 0x01f7feeb77ae5e04d9606c209a7faff2187cd5c1]`
 
 ### Now it's time to interact with the smart contract that we just deployed 
 For allowance, go to the contract of the token that we deployed the contract with, in our case is {`0x01f7feeb77ae5e04d9606c209a7faff2187cd5c1`}
