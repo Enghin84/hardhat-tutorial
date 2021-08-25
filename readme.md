@@ -60,8 +60,8 @@ We will use Hardhat to work with smart contracts. Type `npx hardhat` in the term
 
 ## Verify the contract
 
-Now we have deployed the contract, but we still need to verify it after with this command
- `npx hardhat verify --network rinkeby [contract address] [token address which in our case is 0x01f7feeb77ae5e04d9606c209a7faff2187cd5c1]`
+    Now we have deployed the contract, but we still need to verify it after with this command 
+    `npx hardhat verify --network rinkeby [contract address] [token address which in our case is 0x01f7feeb77ae5e04d9606c209a7faff2187cd5c1]`
 
 ## Contract interaction
 
