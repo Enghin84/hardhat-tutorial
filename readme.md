@@ -9,8 +9,6 @@
 
 --download link: https://nodejs.org/en/download/
 
-### Create a new folder for the project
-
 ##### Generate SSH key
     
    To generate SSH key you have to open a git bash terminal, to do that you have to right click on desktop and select `Git bash here`
@@ -22,9 +20,9 @@
    5. now that we have the ssh-key, we have to go to Github to insert it in account (here is how-to https://imgur.com/a/OdFAYbs)
 
 ##### Clone the git repository
-    1. In the newly created folder you have to open a terminal here, to do that you have to right click and select the 
-    `Git bash here` option
-    2. 
+    1. Create a new folder for this project
+    2. In the newly created folder you have to open a terminal here
+    3. paste this command: git clone git@github.com:Enghin84/hardhat-tutorial.git
 
 ##### Install dependencies
 
