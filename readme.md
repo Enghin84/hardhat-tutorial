@@ -65,7 +65,7 @@ Now we have deployed the contract, but we still need to verify it after with thi
 
 ## Contract interaction
 
-Now it's time to interact with the smart contract that we have just deployed
+Now it's time to interact with the smart contract that we have just deployed (img snippets here https://imgur.com/a/mwLYF2r)
 
 ### Step 1 Allowance & Approve
 
