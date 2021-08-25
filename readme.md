@@ -34,20 +34,20 @@ In the repo we have config.sample.ts, this is a mock version, here you have to r
 
 ##### Add Rinkeby Infura Key
 
-    Go to https://infura.io/ and make an account there
-    Create a new project
-    Copy the Rinkeby ID
-    (Steps here https://imgur.com/a/xkUYdMp)
+   Go to https://infura.io/ and make an account there
+   Create a new project
+   Copy the Rinkeby ID
+   (Steps here https://imgur.com/a/xkUYdMp)
 
 ##### Add Wallet Private key
     
-    Install Metamask wallet, it's an extension for Chrome (tutorial https://www.youtube.com/watch?v=Af_lQ1zUnoM&ab_channel=MoneyZG)
-    Copy wallet address (here is how https://imgur.com/a/LEz7S3y)
-    https://faucet.rinkeby.io/ here you can get eth for Rinkeby, you will find instructions there.
+   Install Metamask wallet, it's an extension for Chrome (tutorial https://www.youtube.com/watch?v=Af_lQ1zUnoM&ab_channel=MoneyZG)
+   Copy wallet address (here is how https://imgur.com/a/LEz7S3y)
+   https://faucet.rinkeby.io/ here you can get eth for Rinkeby, you will find instructions there.
 
 ##### Add Etherscan API key for verify
 
-    Go to https://etherscan.io/ and make an account there to get the API key (here how https://imgur.com/a/SJV34ng)
+   Go to https://etherscan.io/ and make an account there to get the API key (here how https://imgur.com/a/SJV34ng)
 
 ### Type `npx hardhat` to see the commands
 1. First thing we need to `compile` to generate the typechain files
