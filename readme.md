@@ -32,20 +32,20 @@
 
 In the repo we have config.sample.ts, this is a mock version, here you have to rename it in config.ts and inside you have to paste your data.
 
-##### Add Rinkeby Infura Key
+#### Add Rinkeby Infura Key
 
    Go to https://infura.io/ and make an account there
    Create a new project
    Copy the Rinkeby ID
    (Steps here https://imgur.com/a/xkUYdMp)
 
-##### Add Wallet Private key
+#### Add Wallet Private key
     
    Install Metamask wallet, it's an extension for Chrome (tutorial https://www.youtube.com/watch?v=Af_lQ1zUnoM&ab_channel=MoneyZG)
    Copy wallet address (here is how https://imgur.com/a/LEz7S3y)
    https://faucet.rinkeby.io/ here you can get eth for Rinkeby, you will find instructions there.
 
-##### Add Etherscan API key for verify
+#### Add Etherscan API key for verify
 
    Go to https://etherscan.io/ and make an account there to get the API key (here how https://imgur.com/a/SJV34ng)
 
