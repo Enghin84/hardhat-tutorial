@@ -12,7 +12,7 @@
 ### Create a new folder for the project
 
 ##### Generate SSH key
-To generate SSH key you have to open a git bash terminal, to do that you have to right click on desktop and select `Git bash here`
+    To generate SSH key you have to open a git bash terminal, to do that you have to right click on desktop and select `Git bash here`
     1. Insert this command in the terminal `ssh-keygen -t ed25519 -C "your_email@example.com"` and replace with your email, but it has to be the one connected with your GitHub account (if you don't have a GitHub account, go and make one here https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home)
     2. skip the next steps by pressing enter, this way it will go with the default options
     3. the new .pub file it will generate on default location in /c/Users/user/.ssh/id_ed25519 <- `id_ed25519.pub` - this is what we are looking for. Now we have to change location of the terminal by doing the following command: cd /c/Users/user/.ssh/, note that your location might be different, it will contain your user name. You can type `ls` to verify if you are in the correct location, if you see `id_ed25519.pub`, then you are all good.
