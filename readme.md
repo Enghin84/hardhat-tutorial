@@ -1,6 +1,21 @@
-### Clone the git repo
+### Requirements
 
-### Install dependencies
+##### Install GitBash
+
+--download link: https://git-scm.com/downloads
+--instalation guide: https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/
+
+##### Install Node.js
+
+--download link: https://nodejs.org/en/download/
+
+##### Create a new folder for the project
+
+####### Clone the git repository
+    1. In the newly created folder you have to open a terminal here, to do that you have to right click and select the `Git bash here` option
+    2. 
+
+####### Install dependencies
 
 ### Configure your config.ts
 1. Add Rinkeby Infura Key
