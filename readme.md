@@ -52,19 +52,26 @@ In the repo we have config.sample.ts, this is a mock version, here you have to r
 Now that we are all set, it's time to run the commands to progress further. In the terminal insert the next commands
 
 ## Deployment stage
-We will use Harhat to work with smart contracts. Type `npx hardhat` in the terminal to see the list of commands and what they do.
+
+We will use Hardhat to work with smart contracts. Type `npx hardhat` in the terminal to see the list of commands and what they do.
 #### 1. First thing we need to `compile` to generate the typechain files
 #### 2. Then we run the `test` command to see if everything is alright
 #### 3. After this we `run` this command `npx hardhat run --network rinkeby scripts/deploy.ts`. This command will deply the contract on the Rinkeby TestNet. When it will finish the deployment process(it might take a while), it will show here in the terminal the contract address, make sure you keep it safe, it will help us further, when we will intercat with the contract.
 
 ## Verify the contract
+
 Now we have deployed the contract, but we still need to verify it after with this command
-`npx hardhat verify --network rinkeby [contract address] [token address which in our case is 0x01f7feeb77ae5e04d9606c209a7faff2187cd5c1]`
+ `npx hardhat verify --network rinkeby [contract address] [token address which in our case is 0x01f7feeb77ae5e04d9606c209a7faff2187cd5c1]`
 
 ## Contract interaction
-Now it's time to interact with the smart contract that we just deployed 
-For allowance, go to the contract of the token that we deployed the contract with, in our case is {`0x01f7feeb77ae5e04d9606c209a7faff2187cd5c1`}
-    1. Press `Contract` -> `Read Contract`
+
+Now it's time to interact with the smart contract that we have just deployed
+
+### Step 1 Allowance & Approve
+
+For allowance, go to the EQZ contract page https://rinkeby.etherscan.io/address/0x01F7FeEB77aE5e04d9606C209a7faFf2187Cd5c1 
+this is the token that we deployed the contract with, `0x01f7feeb77ae5e04d9606c209a7faff2187cd5c1`
+####n 1. Press `Contract` -> `Read Contract`
 ##### 2. Press `Allowance`
         2.1. Owner (address) -> your wallet public address
         2.2. Spender (address) -> your contract address
@@ -72,4 +79,5 @@ For allowance, go to the contract of the token that we deployed the contract wit
 ##### 4. Press `Approve`
         4.1. Spender (address) -> your contract address
         4.2. Amount (uint256) -> The max value you let the contract to spend from your assets
-##### Now for deposit, go to your contract -> `Write Contract` -> connect wallet -> deposit -> insert the value and then add the digits( hit the +) and select 10^18
+### Step 2 Deposit 
+Now for deposit, go to your contract on Rinkeby testnet -> `Write Contract` -> connect wallet -> deposit -> insert the value and then add the digits( hit the +) and select 10^18
